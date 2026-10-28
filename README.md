@@ -1,7 +1,6 @@
 # Days Gone Complete Unreal Engine C++ SDK & Reflection Dump (PC)
 
 [![Unreal Engine](https://img.shields.io/badge/Unreal%20Engine-4.11%20(Bend%20Fork)-blue.svg)](#)
-[![Platform](https://img.shields.io/badge/Platform-Windows%20x64%20(Steam%20/%20Epic)-lightgrey.svg)](#)
 [![Classes](https://img.shields.io/badge/Classes-5%2C686-green.svg)](#)
 [![Structs](https://img.shields.io/badge/Structs-1%2C897-brightgreen.svg)](#)
 [![Functions](https://img.shields.io/badge/Functions-29%2C301-orange.svg)](#)
