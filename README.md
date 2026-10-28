@@ -9,17 +9,17 @@
 
 A complete, byte-exact, production-ready **C++ Software Development Kit (SDK)** and live **Reflection Dump** for **Days Gone (PC)**.
 
-This SDK was reverse-engineered directly from the live runtime memory of Days Gone on PC (running on Bend Studio's custom fork of Unreal Engine 4.11).
+This SDK was reverse-engineered directly from the live runtime memory of Days Gone on PC (running on a custom fork of Unreal Engine 4.11).
 
 ---
 
-## 🎯 Features & Coverage
+## Features & Coverage
 
 * **Complete Dumper-7 Architecture (4-Tier Package Format):**
-  * `_classes.hpp` — Class declarations, inheritance, variables, and byte-exact padding (`Pad_X[...]`).
-  * `_structs.hpp` — All `UScriptStruct` types (`FVector`, `FRotator`, `FHitResult`, etc.).
-  * `_parameters.hpp` — Dedicated function argument and return parameter structs for invoking `ProcessEvent`.
-  * `_functions.cpp` — Native callable wrappers that auto-pack arguments and call `ProcessEvent`.
+  * `_classes.hpp` - Class declarations, inheritance, variables, and byte-exact padding (`Pad_X[...]`).
+  * `_structs.hpp` - All `UScriptStruct` types (`FVector`, `FRotator`, `FHitResult`, etc.).
+  * `_parameters.hpp` - Dedicated function argument and return parameter structs for invoking `ProcessEvent`.
+  * `_functions.cpp` - Native callable wrappers that auto-pack arguments and call `ProcessEvent`.
 * **Clean & Consolidated:**
   * Native packages are cleanly mapped: `BendGame`, `Engine`, `CoreUObject`, `UMG`, `AIModule`, `SlateCore`, etc.
   * In-game Blueprint cooked assets are cleanly organized into `Game_Blueprints` rather than thousands of fragmented folders.
@@ -28,20 +28,20 @@ This SDK was reverse-engineered directly from the live runtime memory of Days Go
 
 ---
 
-## 🧠 Key Engine Offsets & Reversing Notes
+## Key Engine Offsets & Reversing Notes
 
-Days Gone runs on a proprietary, heavily modified fork of **Unreal Engine 4.11** by Bend Studio:
+Days Gone runs on a proprietary, modified fork of **Unreal Engine 4.11**:
 
 | Engine Component | Address / RVA / Detail | Description |
 | :--- | :--- | :--- |
 | **`GObjects` (FUObjectArray)** | `DaysGone.exe + 0x4C12290` | Root array managing all live engine objects. |
 | **`GNames` (Chunked Array)** | `DaysGone.exe + 0x4AA22F8` | Pointer in `.data` to chunked table of 172,320 names. |
 | **`UProperty::Offset_Internal`** | `+0x50` | Byte offset inside `UProperty` for field offset values. |
-| **`FNameEntry` String Offset** | `+0x12` | Bend Studio inserted a 16-bit field before the name string (stock UE 4.10/4.11 is `0x10`). |
+| **`FNameEntry` String Offset** | `+0x12` | 16-bit field inserted before the name string (stock UE 4.10/4.11 is `0x10`). |
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```text
 Days-Gone-SDK/
@@ -69,7 +69,7 @@ Days-Gone-SDK/
 
 ---
 
-## 🚀 How to Use in Your C++ Project
+## How to Use in Your C++ Project
 
 1. Add the `SDK/` folder to your C++ project's include path.
 2. Include the master header:
@@ -96,8 +96,6 @@ Days-Gone-SDK/
 
 ---
 
-## 🛠️ Credits & Acknowledgments
+## Author
 
-* **Bend Studio & Sony Interactive Entertainment** for creating Days Gone.
-* **Mohamed Moslem Allouch** & **Theys Gone Co-Op Team** for engine reflection extraction and hooking research.
-* Generated and documented with **Antigravity**.
+Developed and maintained by **Mohamed Moslem Allouch**.
