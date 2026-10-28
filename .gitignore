@@ -1,0 +1,14 @@
+# Binaries & IDE artifacts
+*.obj
+*.exe
+*.dll
+*.pdb
+*.suo
+*.user
+.vs/
+.idea/
+.vscode/
+
+# OS artifacts
+.DS_Store
+Thumbs.db
